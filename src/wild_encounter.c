@@ -239,6 +239,10 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
     u8 max;
     u8 range;
     u8 rand;
+    u8 avg;
+    u8 prob;
+    s8 finalLevel;
+    u8 count;
 
     // Make sure minimum level is less than maximum level
     if (wildPokemon->maxLevel >= wildPokemon->minLevel)
@@ -251,8 +255,23 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
         min = wildPokemon->maxLevel;
         max = wildPokemon->minLevel;
     }
-    range = max - min + 1;
-    rand = Random() % range;
+
+    // original formulas
+    //range = max - min + 1;
+    //rand = Random() % range;
+
+    // this uses sent out Pokemon's level for calc (will be average of team later)
+    for (count = 0; count <= 5; count++)
+    {
+	    if (!GetMonData(&gPlayerParty[count], MON_DATA_SANITY_IS_EGG))
+	    {
+		    avg = GetMonData(&gPlayerParty[count], MON_DATA_LEVEL);
+		    break;
+	    }
+    }
+
+    // new probability formula
+    prob = Random() % 100;
 
     // check ability for max level mon
     if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
@@ -261,14 +280,65 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
         if (ability == ABILITY_HUSTLE || ability == ABILITY_VITAL_SPIRIT || ability == ABILITY_PRESSURE)
         {
             if (Random() % 2 == 0)
-                return max;
+                prob = prob + 55;
+                //return max;
 
-            if (rand != 0)
-                rand--;
+            //if (rand != 0)
+            //    rand--;
         }
     }
 
-    return min + rand;
+    // new probability chances
+    if (prob <= 0)
+        finalLevel = avg - 41 - (Random() % 40);
+    else if (prob <= 2)
+        finalLevel = avg - 21 - (Random() % 20);
+    else if (prob <= 5)
+        finalLevel = avg - 11 - (Random() % 10);
+    else if (prob <= 9)
+        finalLevel = avg - 6 - (Random() % 5);
+    else if (prob <= 14)
+        finalLevel = avg - 5;
+    else if (prob <= 20)
+        finalLevel = avg - 4;
+    else if (prob <= 27)
+        finalLevel = avg - 3;
+    else if (prob <= 35)
+        finalLevel = avg - 2;
+    else if (prob <= 44)
+        finalLevel = avg - 1;
+    else if (prob <= 54)
+        finalLevel = avg;
+    else if (prob <= 63)
+        finalLevel = avg + 1;
+    else if (prob <= 71)
+        finalLevel = avg + 2;
+    else if (prob <= 78)
+        finalLevel = avg + 3;
+    else if (prob <= 84)
+        finalLevel = avg + 4;
+    else if (prob <= 89)
+        finalLevel = avg + 5;
+    else if (prob <= 93)
+        finalLevel = avg + 6 + (Random() % 5);
+    else if (prob <= 96)
+        finalLevel = avg + 11 + (Random() % 10);
+    else if (prob <= 98)
+        finalLevel = avg + 21 + (Random() % 20);
+    else if (prob <= 99)
+        finalLevel = avg + 41 + (Random() % 40);
+
+    // max level will be 98, min level will be 2
+    if (finalLevel < 2)
+        finalLevel = 2;
+    if (finalLevel > 98)
+        finalLevel = 98;
+
+    // original return
+    //return min + rand;
+
+    // new return
+    return finalLevel;
 }
 
 static u16 GetCurrentMapWildMonHeaderId(void)

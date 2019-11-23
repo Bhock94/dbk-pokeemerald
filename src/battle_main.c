@@ -5513,6 +5513,8 @@ bool8 TryRunFromBattle(u8 battler)
         gBattleStruct->runTries++;
     }
 
+    effect++;
+
     if (effect)
     {
         gCurrentTurnActionNumber = gBattlersCount;
