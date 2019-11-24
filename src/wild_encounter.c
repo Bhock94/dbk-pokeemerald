@@ -278,7 +278,7 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
 	    if (GetMonData(&gPlayerParty[count], MON_DATA_SANITY_HAS_SPECIES))
 	    {
             numInParty++;
-            if ((&gPlayerParty[count].item == ITEM_SMOKE_BALL) && smokeBallCheck)
+            if ((GetMonData(&gPlayerParty[count], MON_DATA_HELD_ITEM) == ITEM_SMOKE_BALL) && smokeBallCheck)
             {
                 avg = GetMonData(&gPlayerParty[count], MON_DATA_LEVEL);
                 break;
