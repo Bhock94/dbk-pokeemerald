@@ -312,47 +312,47 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
     // new probability chances
     if (prob <= 0)
         finalLevel = avg - 41 - (Random() % 40);
-    else if (prob <= 2)
+    else if (prob > 0 && prob <= 2)
         finalLevel = avg - 21 - (Random() % 20);
-    else if (prob <= 5)
+    else if (prob > 2 && prob <= 5)
         finalLevel = avg - 11 - (Random() % 10);
-    else if (prob <= 9)
+    else if (prob > 5 && prob <= 9)
         finalLevel = avg - 6 - (Random() % 5);
-    else if (prob <= 14)
+    else if (prob > 9 && prob <= 14)
         finalLevel = avg - 5;
-    else if (prob <= 20)
+    else if (prob > 14 && prob <= 20)
         finalLevel = avg - 4;
-    else if (prob <= 27)
+    else if (prob > 20 && prob <= 27)
         finalLevel = avg - 3;
-    else if (prob <= 35)
+    else if (prob > 27 && prob <= 35)
         finalLevel = avg - 2;
-    else if (prob <= 44)
+    else if (prob > 35 && prob <= 44)
         finalLevel = avg - 1;
-    else if (prob <= 54)
+    else if (prob > 44 && prob <= 54)
         finalLevel = avg;
-    else if (prob <= 63)
+    else if (prob > 54 && prob <= 63)
         finalLevel = avg + 1;
-    else if (prob <= 71)
+    else if (prob > 63 && prob <= 71)
         finalLevel = avg + 2;
-    else if (prob <= 78)
+    else if (prob > 71 && prob <= 78)
         finalLevel = avg + 3;
-    else if (prob <= 84)
+    else if (prob > 78 && prob <= 84)
         finalLevel = avg + 4;
-    else if (prob <= 89)
+    else if (prob > 84 && prob <= 89)
         finalLevel = avg + 5;
-    else if (prob <= 93)
+    else if (prob > 89 && prob <= 93)
         finalLevel = avg + 6 + (Random() % 5);
-    else if (prob <= 96)
+    else if (prob > 93 && prob <= 96)
         finalLevel = avg + 11 + (Random() % 10);
-    else if (prob <= 98)
+    else if (prob > 96 && prob <= 98)
         finalLevel = avg + 21 + (Random() % 20);
-    else
+    else if (prob >= 99)
         finalLevel = avg + 41 + (Random() % 40);
 
     // max level will be 98, min level will be 2
     if (finalLevel < 2)
         finalLevel = 2;
-    if (finalLevel > 98)
+    else if (finalLevel > 98)
         finalLevel = 98;
 
     // original return
