@@ -237,8 +237,8 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
 {
     u8 min;
     u8 max;
-    u8 range;
-    u8 rand;
+    //u8 range;
+    //u8 rand;
     u8 numInParty = 0;
     u8 avg = 0;
     bool8 smokeBallCheck = TRUE;
@@ -295,7 +295,7 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
     prob = RandomDBK(100);
 
     // check ability for max level mon
-    /*if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
+    if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
     {
         u8 ability = GetMonAbility(&gPlayerParty[0]);
         if (ability == ABILITY_HUSTLE || ability == ABILITY_VITAL_SPIRIT || ability == ABILITY_PRESSURE)
@@ -307,7 +307,7 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
             //if (rand != 0)
             //    rand--;
         }
-    }*/
+    }
 
     // new probability chances
     if (prob <= 0)
