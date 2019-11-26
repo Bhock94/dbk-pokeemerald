@@ -253,7 +253,7 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
         u32 long
             // max <= RAND_MAX < ULONG_MAX, so this is okay.
             num_bins = (u32 long) maxRand + 1,
-            num_rand = 32768,
+            num_rand = 32767 + 1,
             bin_size = num_rand / num_bins,
             defect   = num_rand % num_bins;
 
