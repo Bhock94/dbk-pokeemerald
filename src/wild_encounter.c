@@ -292,7 +292,7 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
     }
 
     // new probability formula
-    prob = RandomDBK(99);
+    prob = RandomDBK(100);
 
     // check ability for max level mon
     /*if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
@@ -311,13 +311,13 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
 
     // new probability chances
     if (prob <= 0)
-        finalLevel = avg - 41 - (RandomDBK(39));
+        finalLevel = avg - 41 - (RandomDBK(40));
     else if (prob > 0 && prob <= 2)
-        finalLevel = avg - 21 - (RandomDBK(19));
+        finalLevel = avg - 21 - (RandomDBK(20));
     else if (prob > 2 && prob <= 5)
-        finalLevel = avg - 11 - (RandomDBK(9));
+        finalLevel = avg - 11 - (RandomDBK(10));
     else if (prob > 5 && prob <= 9)
-        finalLevel = avg - 6 - (RandomDBK(4));
+        finalLevel = avg - 6 - (RandomDBK(5));
     else if (prob > 9 && prob <= 14)
         finalLevel = avg - 5;
     else if (prob > 14 && prob <= 20)
@@ -341,13 +341,13 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
     else if (prob > 84 && prob <= 89)
         finalLevel = avg + 5;
     else if (prob > 89 && prob <= 93)
-        finalLevel = avg + 6 + (RandomDBK(4));
+        finalLevel = avg + 6 + (RandomDBK(5));
     else if (prob > 93 && prob <= 96)
-        finalLevel = avg + 11 + (RandomDBK(9));
+        finalLevel = avg + 11 + (RandomDBK(10));
     else if (prob > 96 && prob <= 98)
-        finalLevel = avg + 21 + (RandomDBK(19));
+        finalLevel = avg + 21 + (RandomDBK(20));
     else if (prob >= 99)
-        finalLevel = avg + 41 + (RandomDBK(39));
+        finalLevel = avg + 41 + (RandomDBK(40));
 
     // max level will be 98, min level will be 2
     if (finalLevel < 2)
