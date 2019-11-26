@@ -253,7 +253,7 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
         u32 long
             // max <= RAND_MAX < ULONG_MAX, so this is okay.
             num_bins = (u32 long) maxRand + 1,
-            num_rand = (u32 long) RAND_MAX + 1,
+            num_rand = 32768,
             bin_size = num_rand / num_bins,
             defect   = num_rand % num_bins;
 
@@ -314,10 +314,10 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
     }
 
     // new probability formula
-    prob = Random() % 100;
+    prob = RandomDBK(99);
 
     // check ability for max level mon
-    /*if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
+    if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
     {
         u8 ability = GetMonAbility(&gPlayerParty[0]);
         if (ability == ABILITY_HUSTLE || ability == ABILITY_VITAL_SPIRIT || ability == ABILITY_PRESSURE)
@@ -329,17 +329,17 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
             //if (rand != 0)
             //    rand--;
         }
-    }*/
+    }
 
     // new probability chances
     if (prob <= 0)
-        finalLevel = avg - 41 - (Random() % 40);
+        finalLevel = avg - 41 - (RandomDBK(39));
     else if (prob > 0 && prob <= 2)
-        finalLevel = avg - 21 - (Random() % 20);
+        finalLevel = avg - 21 - (RandomDBK(19));
     else if (prob > 2 && prob <= 5)
-        finalLevel = avg - 11 - (Random() % 10);
+        finalLevel = avg - 11 - (RandomDBK(9));
     else if (prob > 5 && prob <= 9)
-        finalLevel = avg - 6 - (Random() % 5);
+        finalLevel = avg - 6 - (RandomDBK(4));
     else if (prob > 9 && prob <= 14)
         finalLevel = avg - 5;
     else if (prob > 14 && prob <= 20)
@@ -363,13 +363,13 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
     else if (prob > 84 && prob <= 89)
         finalLevel = avg + 5;
     else if (prob > 89 && prob <= 93)
-        finalLevel = avg + 6 + (Random() % 5);
+        finalLevel = avg + 6 + (RandomDBK(4));
     else if (prob > 93 && prob <= 96)
-        finalLevel = avg + 11 + (Random() % 10);
+        finalLevel = avg + 11 + (RandomDBK(9));
     else if (prob > 96 && prob <= 98)
-        finalLevel = avg + 21 + (Random() % 20);
+        finalLevel = avg + 21 + (RandomDBK(19));
     else if (prob >= 99)
-        finalLevel = avg + 41 + (Random() % 40);
+        finalLevel = avg + 41 + (RandomDBK(39));
 
     // max level will be 98, min level will be 2
     if (finalLevel < 2)
