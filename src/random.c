@@ -70,7 +70,7 @@ s32 RandomDBK(s32 n)
 
     limit = RAND_MAX - (RAND_MAX % n);
 
-    while((r = Random()) >= limit);
+    while((r = Random32()) >= limit);
 
     return r % n;
 }
