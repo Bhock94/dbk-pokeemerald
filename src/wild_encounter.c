@@ -246,32 +246,6 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
     s8 finalLevel;
     u8 count;
 
-    // Code from Ryan Reick at stackoverflow.com
-    // Assumes 0 <= max <= RAND_MAX
-    // Returns in the closed interval [0, max]
-    s32 RandomDBK(s32 maxRand) {
-        // max <= RAND_MAX < ULONG_MAX, so this is okay.
-        u32 num_bins;
-        u32 num_rand;
-        u32 bin_size;
-        u32 defect;
-        s32 x;
-
-        num_bins = maxRand + 1,
-        num_rand = 32767 + 1,
-        bin_size = num_rand / num_bins,
-        defect   = num_rand % num_bins;
-
-        do {
-        x = Random2();
-        }
-        // This is carefully written not to overflow
-        while (num_rand - defect <= x);
-
-        // Truncated division is intentional
-        return x/bin_size;
-    }
-
     // Make sure minimum level is less than maximum level
     if (wildPokemon->maxLevel >= wildPokemon->minLevel)
     {
