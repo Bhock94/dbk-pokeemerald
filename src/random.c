@@ -66,7 +66,7 @@ s32 RandomDBK(s32 n)
 {
     s32 x;
     do {
-        x = rand();
+        x = Random();
     } while (x >= 32767 - (32767 % n))
 
     x %= n;
