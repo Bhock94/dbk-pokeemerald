@@ -242,8 +242,8 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
     u8 numInParty = 0;
     u8 avg = 0;
     bool8 smokeBallCheck = TRUE;
-    u8 prob = 0;
-    s8 finalLevel;
+    s32 prob = 0;
+    s32 finalLevel;
     u8 count;
 
     // Make sure minimum level is less than maximum level
