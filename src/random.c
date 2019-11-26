@@ -1,6 +1,5 @@
 #include "global.h"
 #include "random.h"
-#include <stdlib.h>
 
 // The number 1103515245 comes from the example implementation of rand and srand
 // in the ISO C standard.
@@ -67,10 +66,11 @@ s32 RandomDBK(s32 n)
 {
     s32 limit;
     s32 r;
+    s32 RAND_MAX = 32767;
 
     limit = RAND_MAX - (RAND_MAX % n);
 
-    while((r = rand()) >= limit);
+    while((r = Random()) >= limit);
 
     return r % n;
 }
