@@ -251,8 +251,7 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
     // Assumes 0 <= max <= RAND_MAX
     // Returns in the closed interval [0, max]
     s32 RandomDBK(s32 maxRand) {
-        u32
-            // max <= RAND_MAX < ULONG_MAX, so this is okay.
+        // max <= RAND_MAX < ULONG_MAX, so this is okay.
         u32 num_bins = u32 maxRand + 1,
         u32 num_rand = 32767 + 1,
         u32 bin_size = num_rand / num_bins,
