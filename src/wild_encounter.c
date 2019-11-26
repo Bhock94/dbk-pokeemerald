@@ -255,13 +255,13 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
         u32 num_rand;
         u32 bin_size;
         u32 defect;
+        s32 x;
 
         num_bins = maxRand + 1,
         num_rand = 32767 + 1,
         bin_size = num_rand / num_bins,
         defect   = num_rand % num_bins;
 
-        s32 x;
         do {
         x = (Random() + Random2())/2;
         }
