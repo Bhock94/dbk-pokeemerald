@@ -39,7 +39,7 @@ u16 Random2(void)
 // Code from Ryan Reick at stackoverflow.com
 // Assumes 0 <= max <= RAND_MAX
 // Returns in the closed interval [0, max]
-s32 RandomDBK(s32 max) {
+/*s32 RandomDBK(s32 max) {
     // max <= RAND_MAX < ULONG_MAX, so this is okay.
     u32 num_bins;
     u32 num_rand;
@@ -60,4 +60,16 @@ s32 RandomDBK(s32 max) {
 
     // Truncated division is intentional
     return x/bin_size;
+}*/
+
+s32 RandomDBK(s32 n)
+{
+    s32 limit;
+    s32 r;
+
+    limit = 32767 - (32767 % n);
+
+    while((r = Random()) >= limit);
+
+    return r % n;
 }
