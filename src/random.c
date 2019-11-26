@@ -64,12 +64,12 @@ u16 Random2(void)
 
 s32 RandomDBK(s32 n)
 {
-    s32 limit;
-    s32 r;
+    s32 x;
+    do {
+        x = rand();
+    } while (x >= 32767 - (32767 % n))
 
-    limit = 32767 - (32767 % n);
+    x %= n;
 
-    while((r = Random()) >= limit);
-
-    return r % n;
+    return x;
 }
