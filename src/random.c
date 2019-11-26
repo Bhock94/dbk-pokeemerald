@@ -34,25 +34,3 @@ u16 Random2(void)
     gRng2Value = 1103515245 * gRng2Value + 24691;
     return gRng2Value >> 16;
 }
-
-// Code from Ryan Reick at stackoverflow.com
-// Assumes 0 <= max <= RAND_MAX
-// Returns in the closed interval [0, max]
-s32 RandomDBK(s32 max) {
-    u32 long
-        // max <= RAND_MAX < ULONG_MAX, so this is okay.
-        num_bins = (u32 long) max + 1,
-        num_rand = (u32 long) RAND_MAX + 1,
-        bin_size = num_rand / num_bins,
-        defect   = num_rand % num_bins;
-
-    s32 x;
-    do {
-     x = random();
-    }
-    // This is carefully written not to overflow
-    while (num_rand - defect <= (u32 long)x);
-
-    // Truncated division is intentional
-    return x/bin_size;
-}
