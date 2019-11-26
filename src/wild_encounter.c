@@ -245,7 +245,6 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
     u8 prob = 0;
     s8 finalLevel;
     u8 count;
-    u32 
 
     // Code from Ryan Reick at stackoverflow.com
     // Assumes 0 <= max <= RAND_MAX
