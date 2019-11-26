@@ -263,7 +263,7 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
         defect   = num_rand % num_bins;
 
         do {
-        x = Random();
+        x = Random2();
         }
         // This is carefully written not to overflow
         while (num_rand - defect <= x);
