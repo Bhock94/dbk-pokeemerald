@@ -253,13 +253,13 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
         u32 long
             // max <= RAND_MAX < ULONG_MAX, so this is okay.
             num_bins = (u32 long) maxRand + 1,
-            num_rand = 2147483599 + 1,
+            num_rand = 2147483647 + 1,
             bin_size = num_rand / num_bins,
             defect   = num_rand % num_bins;
 
         s32 x;
         do {
-        x = Random();
+        x = Random32();
         }
         // This is carefully written not to overflow
         while (num_rand - defect <= (u32 long)x);
