@@ -12,7 +12,7 @@ u16 Random2(void);
 #define Random32() (Random() | (Random() << 16))
 
 //Returns DBK random number
-s32 RandomDBK(s32 max);
+s32 RandomDBK(s32 n);
 
 //Sets the initial seed value of the pseudorandom number generator
 void SeedRng(u16 seed);
