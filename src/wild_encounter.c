@@ -274,10 +274,10 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
                 break;
             }
             else
-                smokeBallCheck--;
+                smokeBallCheck = FALSE;
 		        avg += GetMonData(&gPlayerParty[count], MON_DATA_LEVEL);
 	    }
-        if (count == 5 && !smokeBallCheck)
+        if (count == 5)
             avg = avg / numInParty;
     }
 
