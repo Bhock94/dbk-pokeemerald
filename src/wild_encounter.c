@@ -262,16 +262,6 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
     //range = max - min + 1;
     //rand = Random() % range;
 
-    // this will be used for when the Pokemon holds a Smoke Ball, which will now set scaling to lead Pokmeon.
-    for (count = 0; count <= 5; count++)
-    {
-	    if (!GetMonData(&gPlayerParty[count], MON_DATA_SANITY_IS_EGG))
-	    {
-		    avg = GetMonData(&gPlayerParty[count], MON_DATA_LEVEL);
-		    break;
-	    }
-    }
-
     // calculation for Party Pokemon levels
     for (count = 0; count <= 5; count++)
     {
