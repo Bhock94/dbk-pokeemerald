@@ -2453,7 +2453,7 @@ const struct Item gItems[] =
         .holdEffectParam = 10,
         .description = sKingsRockDesc,
         .pocket = POCKET_ITEMS,
-        .type = 4,
+        .type = 1,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .secondaryId = 0,
     },
