@@ -239,6 +239,7 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
     u8 max;
     //u8 range;
     //u8 rand;
+    u8 numInParty = 0;
     u8 avg = 0;
     u8 levelSum = 0;
     bool8 smokeBallCheck = TRUE;
@@ -262,13 +263,12 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
     //range = max - min + 1;
     //rand = Random() % range;
 
-    CalculatePlayerPartyCount();
-
     // calculation for Party Pokemon levels
     for (count = 0; count <= 5; count++)
     {
-	    if (GetMonData(&gPlayerParty[count], MON_DATA_SPECIES, NULL) != SPECIES_NONE)
+	    if ((GetMonData(&gPlayerParty[count], MON_DATA_SPECIES, NULL) != SPECIES_NONE) && !GetMonData(&gPlayerParty[count], MON_DATA_SANITY_IS_EGG))
 	    {
+            numInParty++;
             if ((GetMonData(&gPlayerParty[count], MON_DATA_HELD_ITEM) == ITEM_SMOKE_BALL) && smokeBallCheck)
             {
                 avg = GetMonData(&gPlayerParty[count], MON_DATA_LEVEL);
@@ -279,7 +279,7 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
 		        levelSum += GetMonData(&gPlayerParty[count], MON_DATA_LEVEL);
 	    }
         if (count == 5)
-            avg = levelSum / gPlayerPartyCount;
+            avg = levelSum / numInParty;
     }
 
     // new probability formula
