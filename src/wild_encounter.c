@@ -265,7 +265,7 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
     // calculation for Party Pokemon levels
     for (count = 0; count <= 5; count++)
     {
-	    if (GetMonData(&gPlayerParty[count], MON_DATA_SANITY_HAS_SPECIES))
+	    if (!GetMonData(&gPlayerParty[count], MON_DATA_SANITY_IS_EGG))
 	    {
             numInParty++;
             if ((GetMonData(&gPlayerParty[count], MON_DATA_HELD_ITEM) == ITEM_SMOKE_BALL) && smokeBallCheck)
