@@ -47,7 +47,7 @@ s32 RandomDBK(s32 max)
 
     s32 x;
     do {
-     x = random();
+     x = random32();
     }
     while (num_rand - defect <= x);
 
