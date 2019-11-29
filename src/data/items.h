@@ -2520,8 +2520,8 @@ const struct Item gItems[] =
         .holdEffect = HOLD_EFFECT_DEEP_SEA_TOOTH,
         .description = sDeepSeaToothDesc,
         .pocket = POCKET_ITEMS,
-        .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .secondaryId = 0,
     },
 
@@ -2533,8 +2533,8 @@ const struct Item gItems[] =
         .holdEffect = HOLD_EFFECT_DEEP_SEA_SCALE,
         .description = sDeepSeaScaleDesc,
         .pocket = POCKET_ITEMS,
-        .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .secondaryId = 0,
     },
 
@@ -2613,8 +2613,8 @@ const struct Item gItems[] =
         .holdEffectParam = 10,
         .description = sMetalCoatDesc,
         .pocket = POCKET_ITEMS,
-        .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .secondaryId = 0,
     },
 
@@ -2641,8 +2641,8 @@ const struct Item gItems[] =
         .holdEffectParam = 10,
         .description = sDragonScaleDesc,
         .pocket = POCKET_ITEMS,
-        .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = 1,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .secondaryId = 0,
     },
 
@@ -2878,7 +2878,7 @@ const struct Item gItems[] =
         .description = sUpGradeDesc,
         .pocket = POCKET_ITEMS,
         .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .secondaryId = 0,
     },
 

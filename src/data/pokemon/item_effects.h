@@ -284,7 +284,7 @@ const u8 gItemEffect_XSpecial[8] = {
     [7] = 1,
 };
 
-const u8 gItemEffect_SunStone[6] = {
+/*const u8 gItemEffect_SunStone[6] = {
     [4] = ITEM4_EVO_STONE,
 };
 
@@ -309,6 +309,10 @@ const u8 gItemEffect_LeafStone[6] = {
 };
 
 const u8 gItemEffect_KingsRock[6] = {
+    [4] = ITEM4_EVO_STONE,
+};*/
+
+const u8 gItemEffect_EvoStone[6] = {
     [4] = ITEM4_EVO_STONE,
 };
 
@@ -477,5 +481,10 @@ const u8 *const gItemEffectTable[] =
     [ITEM_GREPA_BERRY - ITEM_POTION] = gItemEffect_GrepaBerry,
     [ITEM_TAMATO_BERRY - ITEM_POTION] = gItemEffect_TamatoBerry,
     [LAST_BERRY_INDEX - ITEM_POTION] = NULL,
-    [ITEM_KINGS_ROCK - ITEM_POTION] = gItemEffect_KingsRock
+    [ITEM_KINGS_ROCK - ITEM_POTION] = gItemEffect_KingsRock,
+    [ITEM_DEEP_SEA_SCALE - ITEM_POTION] = gItemEffect_EvoStone,
+    [ITEM_DEEP_SEA_TOOTH - ITEM_POTION] = gItemEffect_EvoStone,
+    [ITEM_METAL_COAT - ITEM_POTION] = gItemEffect_EvoStone,
+    [ITEM_DRAGON_SCALE - ITEM_POTION] = gItemEffect_EvoStone,
+    [ITEM_UP_GRADE - ITEM_POTION] = gItemEffect_EvoStone
 };
