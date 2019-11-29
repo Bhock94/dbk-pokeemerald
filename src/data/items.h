@@ -2454,7 +2454,7 @@ const struct Item gItems[] =
         .description = sKingsRockDesc,
         .pocket = POCKET_ITEMS,
         .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .secondaryId = 0,
     },
 
