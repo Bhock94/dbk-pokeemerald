@@ -239,8 +239,8 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
     u8 max;
     //u8 range;
     //u8 rand;
-    u8 numInParty = 0;
     u8 avg = 0;
+    u8 levelSum = 0;
     bool8 smokeBallCheck = TRUE;
     s32 prob = 0;
     s32 finalLevel;
@@ -274,10 +274,10 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
             }
             else
                 smokeBallCheck = FALSE;
-		        avg += GetMonData(&gPlayerParty[count], MON_DATA_LEVEL);
+		        levelSum += GetMonData(&gPlayerParty[count], MON_DATA_LEVEL);
 	    }
         if (count == 5)
-            avg = avg / gPlayerPartyCount;
+            avg = levelSum / gPlayerPartyCount;
     }
 
     // new probability formula
