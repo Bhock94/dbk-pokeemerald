@@ -310,7 +310,7 @@ const u8 gItemEffect_LeafStone[6] = {
 
 const u8 gItemEffect_KingsRock[6] = {
     [4] = ITEM4_EVO_STONE,
-}
+};
 
 const u8 gItemEffect_CheriBerry[6] = {
     [3] = ITEM3_PARALYSIS,
