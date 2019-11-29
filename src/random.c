@@ -39,13 +39,13 @@ s32 RandomDBK(s32 max)
 {
     s32 RAND_MAX = 32767;
     u32 num_bins, num_rand, bin_size, defect;
+    s32 x;
 
     num_bins = max + 1;
     num_rand = RAND_MAX + 1;
     bin_size = num_rand / num_bins;
     defect   = num_rand % num_bins;
 
-    s32 x;
     do {
      x = random32();
     }
