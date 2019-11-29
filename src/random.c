@@ -47,7 +47,7 @@ s32 RandomDBK(s32 max)
     defect   = num_rand % num_bins;
 
     do {
-     x = random32();
+     x = Random32();
     }
     while (num_rand - defect <= x);
 
