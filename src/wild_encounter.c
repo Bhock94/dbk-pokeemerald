@@ -239,11 +239,11 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
     u8 max;
     //u8 range;
     //u8 rand;
-    u8 numInParty = 0;
-    u8 avg = 0;
-    u8 levelSum = 0;
+    u8 numInParty;
+    u8 avg;
+    u8 levelSum;
     bool8 smokeBallCheck = TRUE;
-    s32 prob = 0;
+    s32 prob;
     s32 finalLevel;
     u8 count;
 
