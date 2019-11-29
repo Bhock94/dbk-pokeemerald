@@ -239,10 +239,11 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
     u8 max;
     //u8 range;
     //u8 rand;
-    u8 numInParty = 0;
-    u8 avg = 0;
+    u8 numInParty;
+    u8 avg;
+    u8 levelSum;
     bool8 smokeBallCheck = TRUE;
-    s32 prob = 0;
+    s32 prob;
     s32 finalLevel;
     u8 count;
 
@@ -262,20 +263,10 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
     //range = max - min + 1;
     //rand = Random() % range;
 
-    // this will be used for when the Pokemon holds a Smoke Ball, which will now set scaling to lead Pokmeon.
-    for (count = 0; count <= 5; count++)
-    {
-	    if (!GetMonData(&gPlayerParty[count], MON_DATA_SANITY_IS_EGG))
-	    {
-		    avg = GetMonData(&gPlayerParty[count], MON_DATA_LEVEL);
-		    break;
-	    }
-    }
-
     // calculation for Party Pokemon levels
     for (count = 0; count <= 5; count++)
     {
-	    if (GetMonData(&gPlayerParty[count], MON_DATA_SANITY_HAS_SPECIES))
+	    if ((GetMonData(&gPlayerParty[count], MON_DATA_SPECIES) != SPECIES_NONE) && !GetMonData(&gPlayerParty[count], MON_DATA_SANITY_IS_EGG))
 	    {
             numInParty++;
             if ((GetMonData(&gPlayerParty[count], MON_DATA_HELD_ITEM) == ITEM_SMOKE_BALL) && smokeBallCheck)
@@ -284,11 +275,11 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
                 break;
             }
             else
-                smokeBallCheck--;
-		        avg += GetMonData(&gPlayerParty[count], MON_DATA_LEVEL);
+                smokeBallCheck = FALSE;
+		        levelSum += GetMonData(&gPlayerParty[count], MON_DATA_LEVEL);
 	    }
-        if (count == 5 && !smokeBallCheck)
-            avg = avg / numInParty;
+        if (count == 5)
+            avg = levelSum / numInParty;
     }
 
     // new probability formula

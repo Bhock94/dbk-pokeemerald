@@ -35,15 +35,21 @@ u16 Random2(void)
     return gRng2Value >> 16;
 }
 
-s32 RandomDBK(s32 n)
+s32 RandomDBK(s32 max)
 {
-    s32 limit;
-    s32 r;
     s32 RAND_MAX = 32767;
+    u32 num_bins, num_rand, bin_size, defect;
+    s32 x;
 
-    limit = RAND_MAX - (RAND_MAX % n);
+    num_bins = max + 1;
+    num_rand = RAND_MAX + 1;
+    bin_size = num_rand / num_bins;
+    defect   = num_rand % num_bins;
 
-    while((r = Random32()) >= limit);
+    do {
+     x = Random32();
+    }
+    while (num_rand - defect <= x);
 
-    return r % n;
+    return x/bin_size;
 }
