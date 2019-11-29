@@ -282,8 +282,6 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
             avg = levelSum / numInParty;
     }
 
-    avg = 50;
-
     // new probability formula
     prob = RandomDBK(100);
 
