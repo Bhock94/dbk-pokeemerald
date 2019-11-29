@@ -460,6 +460,7 @@ const u8 *const gItemEffectTable[] =
     [ITEM_THUNDER_STONE - ITEM_POTION] = gItemEffect_ThunderStone,
     [ITEM_WATER_STONE - ITEM_POTION] = gItemEffect_WaterStone,
     [ITEM_LEAF_STONE - ITEM_POTION] = gItemEffect_LeafStone,
+    [ITEM_KINGS_ROCK - ITEM_POTION] = gItemEffect_KingsRock,
     [ITEM_CHERI_BERRY - ITEM_POTION] = gItemEffect_CheriBerry,
     [ITEM_CHESTO_BERRY - ITEM_POTION] = gItemEffect_ChestoBerry,
     [ITEM_PECHA_BERRY - ITEM_POTION] = gItemEffect_PechaBerry,
@@ -476,6 +477,5 @@ const u8 *const gItemEffectTable[] =
     [ITEM_HONDEW_BERRY - ITEM_POTION] = gItemEffect_HondrewBerry,
     [ITEM_GREPA_BERRY - ITEM_POTION] = gItemEffect_GrepaBerry,
     [ITEM_TAMATO_BERRY - ITEM_POTION] = gItemEffect_TamatoBerry,
-    [ITEM_KINGS_ROCK - ITEM_POTION] = gItemEffect_KingsRock,
     [LAST_BERRY_INDEX - ITEM_POTION] = NULL
 };
