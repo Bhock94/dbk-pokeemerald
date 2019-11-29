@@ -262,6 +262,8 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
     //range = max - min + 1;
     //rand = Random() % range;
 
+    CalculatePlayerPartyCount();
+
     // calculation for Party Pokemon levels
     for (count = 0; count <= 5; count++)
     {
