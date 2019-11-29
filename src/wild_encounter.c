@@ -266,21 +266,23 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon)
     // calculation for Party Pokemon levels
     for (count = 0; count <= 5; count++)
     {
-	    if ((GetMonData(&gPlayerParty[count], MON_DATA_SPECIES, NULL) != SPECIES_NONE) && !GetMonData(&gPlayerParty[count], MON_DATA_SANITY_IS_EGG))
+	    if ((GetMonData(&gPlayerParty[count], MON_DATA_SPECIES) != SPECIES_NONE) && !GetMonData(&gPlayerParty[count], MON_DATA_SANITY_IS_EGG))
 	    {
             numInParty++;
             if ((GetMonData(&gPlayerParty[count], MON_DATA_HELD_ITEM) == ITEM_SMOKE_BALL) && smokeBallCheck)
             {
-                avg = GetMonData(&gPlayerParty[count], MON_DATA_LEVEL, NULL);
+                avg = GetMonData(&gPlayerParty[count], MON_DATA_LEVEL);
                 break;
             }
             else
                 smokeBallCheck = FALSE;
-		        levelSum += GetMonData(&gPlayerParty[count], MON_DATA_LEVEL, NULL);
+		        levelSum += GetMonData(&gPlayerParty[count], MON_DATA_LEVEL);
 	    }
         if (count == 5)
             avg = levelSum / numInParty;
     }
+
+    avg = 50;
 
     // new probability formula
     prob = RandomDBK(100);
