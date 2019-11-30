@@ -464,6 +464,7 @@ const u8 *const gItemEffectTable[] =
     [ITEM_THUNDER_STONE - ITEM_POTION] = gItemEffect_EvoStone,
     [ITEM_WATER_STONE - ITEM_POTION] = gItemEffect_EvoStone,
     [ITEM_LEAF_STONE - ITEM_POTION] = gItemEffect_EvoStone,
+    [ITEM_LINK_CABLE - ITEM_POTION] = gItemEffect_EvoStone,
     [ITEM_CHERI_BERRY - ITEM_POTION] = gItemEffect_CheriBerry,
     [ITEM_CHESTO_BERRY - ITEM_POTION] = gItemEffect_ChestoBerry,
     [ITEM_PECHA_BERRY - ITEM_POTION] = gItemEffect_PechaBerry,

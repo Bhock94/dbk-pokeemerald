@@ -103,15 +103,15 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_05A] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
     [ITEM_05B] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
     [ITEM_05C] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
-    // Evolution stones
+    // Evolution stones / items
     [ITEM_SUN_STONE] = {gItemIcon_SunStone, gItemIconPalette_SunStone},
     [ITEM_MOON_STONE] = {gItemIcon_MoonStone, gItemIconPalette_MoonStone},
     [ITEM_FIRE_STONE] = {gItemIcon_FireStone, gItemIconPalette_FireStone},
     [ITEM_THUNDER_STONE] = {gItemIcon_ThunderStone, gItemIconPalette_ThunderStone},
     [ITEM_WATER_STONE] = {gItemIcon_WaterStone, gItemIconPalette_WaterStone},
     [ITEM_LEAF_STONE] = {gItemIcon_LeafStone, gItemIconPalette_LeafStone},
+    [ITEM_LINK_CABLE] = {gItemIcon_LinkCable, gItemIconPalette_LinkCable},
     // ????????
-    [ITEM_063] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
     [ITEM_064] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
     [ITEM_065] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
     [ITEM_066] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
