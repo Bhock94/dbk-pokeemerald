@@ -200,8 +200,8 @@ const u32 gItemIconPalette_WaterStone[] = INCBIN_U32("graphics/items/icon_palett
 const u32 gItemIcon_LeafStone[] = INCBIN_U32("graphics/items/icons/leaf_stone.4bpp.lz");
 const u32 gItemIconPalette_LeafStone[] = INCBIN_U32("graphics/items/icon_palettes/leaf_stone.gbapal.lz");
 
-const u32 gItemIcon_LinkCable[] = INCBIN_U32("graphics/items/icons/link_cable.4bpp.lz");
-const u32 gItemIconPalette_LinkCable[] = INCBIN_U32("graphics/items/icon_palettes/link_cable.gbapal.lz");
+const u32 gItemIcon_LinkCable[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
+const u32 gItemIconPalette_LinkCable[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
 
 // Valuables
 
