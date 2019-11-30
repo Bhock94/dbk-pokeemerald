@@ -771,3 +771,7 @@ BattleFrontier_ExchangeServiceCorner_Text_DeepSeaToothDesc:: @ 8260642
 BattleFrontier_ExchangeServiceCorner_Text_DeepSeaScaleDesc:: @ 8260673
 	.string "A hold item that raises the\n"
 	.string "SP. DEF of CLAMPERL.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_LinkCableDesc:: @ 82606A4
+	.string "Makes certain species of\n"
+	.string "POKéMON evolve.$"

@@ -825,6 +825,8 @@ extern const u8 BattleFrontier_ExchangeServiceCorner_Text_FocusBandDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ScopeLensDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_DeepSeaToothDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_DeepSeaScaleDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_LinkCableDesc[];
+
 
 // Battle Frontier Move Tutors
 extern const u8 BattleFrontier_Lounge7_Text_SoftboiledDesc[];

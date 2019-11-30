@@ -45,8 +45,9 @@ static const u16 sFrontierExchangeCorner_HoldItems[] =
     ITEM_KINGS_ROCK, 
     ITEM_FOCUS_BAND, 
     ITEM_SCOPE_LENS, 
-    /*ITEM_DEEP_SEA_TOOTH, 
-    ITEM_DEEP_SEA_SCALE, */
+    ITEM_DEEP_SEA_TOOTH, 
+    ITEM_DEEP_SEA_SCALE,
+    ITEM_LINK_CABLE,
     0xFFFF 
 };
 
@@ -99,5 +100,6 @@ static const u8 *const sFrontierExchangeCorner_HoldItemsDescriptions[] =
     BattleFrontier_ExchangeServiceCorner_Text_ScopeLensDesc,
     BattleFrontier_ExchangeServiceCorner_Text_DeepSeaToothDesc,
     BattleFrontier_ExchangeServiceCorner_Text_DeepSeaScaleDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_LinkCableDesc,
     gText_Exit
 };
