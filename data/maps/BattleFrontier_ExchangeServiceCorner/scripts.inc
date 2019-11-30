@@ -763,3 +763,11 @@ BattleFrontier_ExchangeServiceCorner_Text_FocusBandDesc:: @ 82605E2
 BattleFrontier_ExchangeServiceCorner_Text_ScopeLensDesc:: @ 8260613
 	.string "A hold item that raises the\n"
 	.string "critical-hit rate.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_DeepSeaToothDesc:: @ 8260642
+	.string "A hold item that raises the\n"
+	.string "SP. ATK of CLAMPERL.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_DeepSeaScaleDesc:: @ 8260673
+	.string "A hold item that raises the\n"
+	.string "SP. DEF of CLAMPERL.$"
